@@ -19,8 +19,7 @@ dscrot() {
 	scrot "$TMPDIR/tmp.png"
 	optipng -o7 "$TMPDIR/tmp.png"
 	MD5=$(md5sum "$TMPDIR/tmp.png" | awk '{print $1}')
-	mv "$TMPDIR/tmp.png" "$IMG/Screenshots/$MD5.png"
-	
+	mv "$TMPDIR/tmp.png" "$HOME/media/img/Screenshots/$MD5.png"
 }
 
 # dtach manager
