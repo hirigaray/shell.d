@@ -6,4 +6,3 @@ export ENV=$HOME/.profile
 for file in ~/local/cfg/shell.d/*; do
 	. $file
 done
-
