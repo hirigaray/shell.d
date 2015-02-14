@@ -1,0 +1,84 @@
+#!/bin/sh
+# shell functions
+
+# colorize
+color() {
+	color="$1"; shift
+	text="$@"
+	echo -n "[3${color}m${text}[00m"
+}
+
+lightcolor() {
+	color="$1"; shift
+	text="$@"
+	echo -n "[9${color}m${text}[00m"
+}
+
+# take a desktop screenshot
+dscrot() {
+	scrot "$TMPDIR/tmp.png"
+	optipng -o7 "$TMPDIR/tmp.png"
+	MD5=$(md5sum "$TMPDIR/tmp.png" | awk '{print $1}')
+	mv "$TMPDIR/tmp.png" "$IMG/Screenshots/$MD5.png"
+	
+}
+
+# dtach manager
+dt() {
+	sockets="$TMPDIR/dtach"
+	if [ -n "$1" ]; then
+		case "$1" in
+			list|ls) ls -1 "$sockets"/* | sed s:$sockets/:: ;;
+			rtorrent|rt) dtach -A "$sockets/rtorrent" rtorrent ;;
+			*) dtach -A "$sockets/$1" -e  "$@"
+		esac
+	else
+		echo "No application or socket specified."
+	fi
+}
+
+# extract files
+extract() {
+	if [ -f "$1" ] ; then
+		case "$1" in
+			*.tar.bz2 | *.tbz2 | *.tar.gz | *.tgz | *.tar.xz | *.txz | *.zip ) bsdtar -xf "$1" ;;
+			*.7z) 7z x "$1" ;;
+			*.bz2) bunzip2 "$1" ;;
+			*.gz) gunzip "$1" ;;
+			*.rar) unrar x "$1" ;;
+			*.tar) tar xvf "$1" ;;
+			*.xz) xz -d "$1" ;;
+			*.Z) uncompress "$1" ;;
+			*) echo "Unable to extract $1." ;;
+		esac
+	else
+		echo "Usage: extract $1"
+	fi
+}
+
+# teknik uploader
+tek() {
+	if [ -z "$1" ]; then
+		echo 'You must submit a file to be uploaded!\n'
+		exit 1
+	else
+		out=$(curl -sf -F file="@$1" https://api.teknik.io/upload/post)
+		out="${out##*name\":\"}"
+		out="${out%%\"*}"
+		echo "https://u.teknik.io/${out}"
+	fi
+}
+
+# convert bdf to pcf
+mkpcf() {
+	rm -f *.pcf *.bdf.bak fonts.dir fonts.scale
+
+	for file in *.bdf; do
+		bdftopcf -o "${file%\.*}.pcf" "$file"
+	done
+}
+
+# make patch
+mkpatch() {
+	diff -Naur $1 $2 > $3
+}
