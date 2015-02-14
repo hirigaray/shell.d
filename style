@@ -2,7 +2,7 @@
 # shell style
 
 prompt() {
-	case $? in             # check exit code of last command
+	case $? in # check exit code of last command
 		0)   color 4 $1 ;; # success
 		1)   color 1 $1 ;; # error
 		126) color 3 $1 ;; # cannot execute
