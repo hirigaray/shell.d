@@ -22,6 +22,7 @@ mkdir -pm 700 $TMPDIR/$SUBTMP
 export LOCAL="$HOME/local"
 export CABAL="$HOME/.cabal"
 export GOPATH="$LOCAL/go"
+export GOROOT="/usr/lib/go"
 
 export XDG_CONFIG_HOME="$HOME/local/cfg"
 export XDG_RUNTIME_DIR="$TMPDIR/xdg"
