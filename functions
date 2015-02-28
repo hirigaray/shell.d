@@ -22,6 +22,11 @@ dscrot() {
 	mv "$TMPDIR/tmp.png" "$HOME/media/img/Screenshots/$MD5.png"
 }
 
+# start things in new X server
+newx() {
+	xinit $(which $1) -- :1
+}
+
 # dtach manager
 dt() {
 	sockets="$TMPDIR/dtach"
@@ -52,19 +57,6 @@ extract() {
 		esac
 	else
 		echo "Usage: extract $1"
-	fi
-}
-
-# teknik uploader
-tek() {
-	if [ -z "$1" ]; then
-		echo 'You must submit a file to be uploaded!\n'
-		exit 1
-	else
-		out=$(curl -sf -F file="@$1" https://api.teknik.io/upload/post)
-		out="${out##*name\":\"}"
-		out="${out%%\"*}"
-		echo "https://u.teknik.io/${out}"
 	fi
 }
 
