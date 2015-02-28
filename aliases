@@ -8,15 +8,13 @@ alias ta="tmux attach"
 alias get="curl -O"
 alias png="ping -c 3"
 alias irc="ii -s rizonbnc.us.rizon.net -k IRCPASS -p 1234 -i $IRC &"
-alias ircas="ii -s irc.rizon.net -i $IRC -n"
+alias ircas="ii -s irc.rizon.net -i ~/local/irc -n"
 alias rnb="toilet --gay -t -f"
 alias say="echo "$@" > in"
 alias byz="byzanz-record $@ desktop.gif"
 alias spr="curl -F 'sprunge=<-' http://sprunge.us"
 alias mkd="mkdir -p"
 
-# games
-alias oa="xinit /usr/bin/openarena -- :1"
 
 # replace
 alias vi="nvim"
