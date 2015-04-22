@@ -3,11 +3,11 @@
 
 prompt() {
 	case $? in # check exit code of last command
-		0)   color 4 $1 ;; # success
-		1)   color 1 $1 ;; # error
-		126) color 3 $1 ;; # cannot execute
-		127) color 5 $1 ;; # command not found
-		130) color 2 $1 ;; # ^C
+		0)   color 4 "$(emote point)" $1 ;; # success
+		1)   color 1 "$(emote mad)"   $1 ;; # error
+		126) color 3 "$(emote what)"  $1 ;; # cannot execute
+		127) color 5 "$(emote shrug)" $1 ;; # command not found
+		130) color 2 "$(emote denko)" $1 ;; # ^C
 		*)   color 0 $1 ;; # catch all
 	esac
 }
@@ -16,7 +16,7 @@ path() {
 	pwd | sed s:$HOME:~: | tr -d "aeiou AEIOU"
 }
 
-export PS1='$(path) $(prompt \$) '
+export PS1='$(prompt $) '
 export PS2='> '
 export PS3='\ '
 export PS4='| '
