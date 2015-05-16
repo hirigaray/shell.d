@@ -1,8 +1,8 @@
 #!/bin/sh
 # make sure this file is sourced in every session
-export ENV=$HOME/.profile
+export ENV=/home/kori/.profile
 
 # source everything
-for file in ~/local/cfg/shell.d/*; do
+for file in /home/kori/local/cfg/shell.d/*; do
 	. $file
 done
