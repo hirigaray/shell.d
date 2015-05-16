@@ -2,44 +2,43 @@
 # shell aliases
 
 # shorten
-alias mc="column -c 80"
-alias sp=". ~/.profile"
-alias ta="tmux attach"
-alias get="curl -O"
-alias png="ping -c 3"
+alias mc='column -c 80'
+alias sp='. ~/.profile'
+alias ta='tmux attach'
+alias get='curl -O'
+alias png='ping -c 3'
 alias irc="ii -s rizonbnc.us.rizon.net -k IRCPASS -p 1234 -i $IRC &"
-alias ircas="ii -s irc.rizon.net -i ~/local/irc -n"
-alias rnb="toilet --gay -t -f"
-alias say="echo "$@" > in"
+alias ircas='ii -s irc.rizon.net -i ~/local/irc -n'
+alias rnb='toilet --gay -t -f'
+alias say="echo $@ > in"
 alias byz="byzanz-record $@ desktop.gif"
 alias spr="curl -F 'sprunge=<-' http://sprunge.us"
-alias mkd="mkdir -p"
-
+alias mkd='mkdir -p'
+alias qemu='qemu-system-x86_64'
 
 # replace
-alias vi="nvim"
-alias cc="clang"
-alias df="dfc"
-alias top="htop"
+alias vi='nvim'
+alias cc='clang'
+alias df='dfc'
+alias top='htop'
 
 # cp
-alias cp="cp -arv"
+alias cp='cp -arv'
 
 # mv
-alias mv="mv -v"
+alias mv='mv -v'
 
 # ls
-alias ls="ls -F --color=auto --group-directories-first"
-alias ll="ls -lhoGg"
-alias la="ls -a"
-alias lc="ls | mc"
+alias ls='ls -F --color=auto --group-directories-first'
+alias ll='ls -lhoGg'
+alias la='ls -a'
 
 # rm
-alias rdf="rm -rf"
+alias rdf='rm -rf'
 
 # administration
 alias sudit="sudo $EDITOR"
-alias mktmp="mkdir -pm 700 $TMPDIR/$SUBTMP"
+alias mktmp="mkdir -pm700 $TMPDIR/$SUBTMP"
 
 # rust
-alias rsc="rustc"
+alias rsc='rustc'
