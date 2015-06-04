@@ -20,6 +20,7 @@ dscrot() {
 	optipng -o7 "$TMPDIR/tmp.png"
 	MD5=$(md5sum "$TMPDIR/tmp.png" | awk '{print $1}')
 	mv "$TMPDIR/tmp.png" "$HOME/media/img/Screenshots/$MD5.png"
+	echo "$HOME/media/img/Screenshots/$MD5.png"
 }
 
 # start things in new X server
@@ -45,8 +46,7 @@ dt() {
 extract() {
 	if [ -f "$1" ] ; then
 		case "$1" in
-			*.tar.bz2 | *.tbz2 | *.tar.gz | *.tgz | *.tar.xz | *.txz | *.zip ) bsdtar -xf "$1" ;;
-			*.7z) 7z x "$1" ;;
+			*.tar.bz2 | *.tbz2 | *.tar.gz | *.tgz | *.tar.xz | *.txz | *.zip | *.7z) bsdtar -xf "$1" ;;
 			*.bz2) bunzip2 "$1" ;;
 			*.gz) gunzip "$1" ;;
 			*.rar) unrar x "$1" ;;
@@ -62,8 +62,6 @@ extract() {
 
 # convert bdf to pcf
 mkpcf() {
-	rm -f *.pcf *.bdf.bak fonts.dir fonts.scale
-
 	for file in *.bdf; do
 		bdftopcf -o "${file%\.*}.pcf" "$file"
 	done
@@ -72,4 +70,27 @@ mkpcf() {
 # make patch
 mkpatch() {
 	diff -Naur $1 $2 > $3
+}
+
+# list files in columns
+lc() {
+	if [ $# -eq 0 ]; then
+		ls | mc
+	else
+		for path in $@; do
+			if test -d $path; then
+				if [ $# -ne 1 ]; then
+					echo "$path:"
+				fi
+					ls $path | mc
+				else
+					echo -n "$path "
+			fi
+					echo
+		done
+	fi
+}
+# run last command as root 
+root() {
+	sudo $(fc -n -l -1)
 }
