@@ -12,6 +12,7 @@ export SDL_AUDIODRIVER="alsa"
 # language
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+export GTK_IM_MODULE="xim"
 
 # temporary folder and subfolders
 export TMPDIR="/tmp/$USER"
