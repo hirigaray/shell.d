@@ -11,7 +11,6 @@ alias irc="ii -s rizonbnc.us.rizon.net -k IRCPASS -p 1234 -i $IRC &"
 alias ircas='ii -s irc.rizon.net -i ~/local/irc -n'
 alias rnb='toilet --gay -t -f'
 alias say="echo $@ > in"
-alias byz="byzanz-record $@ desktop.gif"
 alias spr="curl -F 'sprunge=<-' http://sprunge.us"
 alias mkd='mkdir -p'
 alias qemu='qemu-system-x86_64'

@@ -10,14 +10,14 @@ prompt() {
 		130) c=2 ;; # ^C
 		*)   c=0 ;; # catch all
 	esac
-	color $c $1
+	color $c "$1 "
 }
 
 path() {
 	pwd | sed s:$HOME:~: | tr -d "aeiou AEIOU"
 }
 
-export PS1='$(prompt \$) '
+export PS1='$(prompt ―――)'
 export PS2='> '
 export PS3='\ '
 export PS4='| '
