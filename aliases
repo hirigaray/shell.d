@@ -2,18 +2,12 @@
 # shell aliases
 
 # shorten
-alias mc='column -c 80'
-alias sp='. ~/.profile'
+alias t='tmux'
 alias ta='tmux attach'
+alias sp='. ~/.profile'
 alias get='curl -O'
-alias png='ping -c 3'
-alias irc="ii -s rizonbnc.us.rizon.net -k IRCPASS -p 1234 -i $IRC &"
-alias ircas='ii -s irc.rizon.net -i ~/local/irc -n'
 alias rnb='toilet --gay -t -f'
-alias say="echo $@ > in"
 alias spr="curl -F 'sprunge=<-' http://sprunge.us"
-alias mkd='mkdir -p'
-alias qemu='qemu-system-x86_64'
 
 # replace
 alias vi='nvim'
@@ -23,21 +17,16 @@ alias top='htop'
 
 # cp
 alias cp='cp -arv'
-
 # mv
 alias mv='mv -v'
-
 # ls
 alias ls='ls -F --color=auto --group-directories-first'
 alias ll='ls -lhoGg'
 alias la='ls -a'
-
 # rm
 alias rdf='rm -rf'
+# mkdir
+alias mkdir='mkdir -p'
 
 # administration
 alias sudit="sudo $EDITOR"
-alias mktmp="mkdir -pm700 $TMPDIR/$SUBTMP"
-
-# rust
-alias rsc='rustc'
