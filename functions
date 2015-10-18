@@ -24,7 +24,7 @@ dscrot() {
 }
 
 # start things in new X server
-newx() {
+ox() {
 	xinit $(which $1) -- :1
 }
 
@@ -72,25 +72,7 @@ mkpatch() {
 	diff -Naur $1 $2 > $3
 }
 
-# list files in columns
-lc() {
-	if [ $# -eq 0 ]; then
-		ls | mc
-	else
-		for path in $@; do
-			if test -d $path; then
-				if [ $# -ne 1 ]; then
-					echo "$path:"
-				fi
-					ls $path | mc
-				else
-					echo -n "$path "
-			fi
-					echo
-		done
-	fi
-}
 # run last command as root 
-root() {
-	sudo $(fc -n -l -1)
+whoops() {
+	sudo -p "(⇀‸↼‶): " $(fc -nlr | sed 1q)
 }

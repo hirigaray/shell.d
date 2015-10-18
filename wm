@@ -1,0 +1,21 @@
+#!/bin/sh
+# window mangler vars
+
+# panel height
+export PANELHEIGHT='18'
+
+# gaps
+export GAP='24'
+
+# border width
+export BORDERWIDTH='1'
+
+# number of groups
+export WNUMBER='8'
+
+# root for group files
+export WROOT="$TMPDIR/wm/groups.d"
+
+# each file in $WSTATUS represents a group
+# if it contains 0, the group is inactive, if it contains 1, it's active.
+export WSTATUS="$TMPDIR/wm/status.d"
