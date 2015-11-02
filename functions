@@ -35,7 +35,7 @@ dt() {
 		case "$1" in
 			list|ls) ls -1 "$sockets"/* | sed s:$sockets/:: ;;
 			rtorrent|rt) dtach -A "$sockets/rtorrent" rtorrent ;;
-			*) dtach -A "$sockets/$1" -e  "$@"
+			*) dtach -A "$sockets/$1" -e  $(shift; echo $@)
 		esac
 	else
 		echo "No application or socket specified."

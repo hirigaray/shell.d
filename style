@@ -17,7 +17,7 @@ path() {
 	pwd | sed s:$HOME:~: | tr -d "aeiou AEIOU"
 }
 
-export PS1='$(prompt ―――)'
+export PS1=`prompt ⟩`
 export PS2='> '
 export PS3='\ '
 export PS4='| '

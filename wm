@@ -1,21 +1,23 @@
 #!/bin/sh
 # window mangler vars
 
-# panel height
-export PANELHEIGHT='18'
+# root for wm files
+export WROOT="$TMPDIR/wm"
 
-# gaps
-export GAP='24'
-
-# border width
-export BORDERWIDTH='1'
-
-# number of groups
-export WNUMBER='8'
-
-# root for group files
-export WROOT="$TMPDIR/wm/groups.d"
+# group files
+export WGROUPS="$WROOT/groups.d"
 
 # each file in $WSTATUS represents a group
 # if it contains 0, the group is inactive, if it contains 1, it's active.
-export WSTATUS="$TMPDIR/wm/status.d"
+export WSTATUS="$WROOT/status.d"
+
+# wm vars (panel height, gaps, border width, number of groups)
+export WMVARS="$WROOT/vars.d"
+
+if [ ! -d $WMVARS ]; then
+	mkdir $WMVARS
+	echo '1' > $WMVARS/borderwidth
+	echo '24' > $WMVARS/gaps
+	echo '8' > $WMVARS/groups
+	echo '18' > $WMVARS/panelheight
+fi
