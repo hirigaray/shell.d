@@ -12,12 +12,4 @@ export WGROUPS="$WROOT/groups.d"
 export WSTATUS="$WROOT/status.d"
 
 # wm vars (panel height, gaps, border width, number of groups)
-export WMVARS="$WROOT/vars.d"
-
-if [ ! -d $WMVARS ]; then
-	mkdir $WMVARS
-	echo '1' > $WMVARS/borderwidth
-	echo '24' > $WMVARS/gaps
-	echo '8' > $WMVARS/groups
-	echo '18' > $WMVARS/panelheight
-fi
+export WMCONF="$HOME/local/wm/conf"

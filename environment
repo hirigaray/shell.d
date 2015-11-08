@@ -2,7 +2,7 @@
 # environment variables
 
 # programs
-export BROWSER="icecat"
+export BROWSER="dwb"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export PAGER="most"
@@ -12,7 +12,6 @@ export SDL_AUDIODRIVER="alsa"
 # language
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-export GTK_IM_MODULE="xim"
 
 # temporary folder and subfolders
 export TMPDIR="/tmp/$USER"
