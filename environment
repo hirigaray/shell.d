@@ -2,10 +2,10 @@
 # environment variables
 
 # programs
-export BROWSER="dwb"
+export BROWSER="firefox"
 export EDITOR="nvim"
 export VISUAL="nvim"
-export PAGER="most"
+export PAGER="less"
 export SXHKD_SHELL="/bin/sh"
 export SDL_AUDIODRIVER="alsa"
 
