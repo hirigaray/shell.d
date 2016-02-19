@@ -15,8 +15,11 @@ export LC_ALL="en_US.UTF-8"
 
 # temporary folder and subfolders
 export TMPDIR="/tmp/$USER"
-export SUBTMP={dtach,fonts,xdg,build}
-mkdir -pm 700 $TMPDIR/$SUBTMP
+SUBTMP="dtach fonts xdg build"
+
+for d in $SUBTMP; do
+	mkdir -pm700 $TMPDIR/$d
+done
 
 # paths
 export LOCAL="$HOME/local"

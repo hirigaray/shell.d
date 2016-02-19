@@ -1,23 +1,7 @@
 #!/bin/sh
 # shell style
 
-prompt() {
-	case $? in # check exit code of last command
-		0)   c=4 ;; # success
-		1)   c=1 ;; # error
-		126) c=3 ;; # cannot execute
-		127) c=5 ;; # command not found
-		130) c=2 ;; # ^C
-		*)   c=0 ;; # catch all
-	esac
-	color $c "$1 "
-}
-
-path() {
-	pwd | sed s:$HOME:~: | tr -d "aeiou AEIOU"
-}
-
-export PS1=`prompt ⟩`
+export PS1="$(color 4 ⟩) "
 export PS2='> '
 export PS3='\ '
 export PS4='| '

@@ -2,10 +2,9 @@
 # shell aliases
 
 # shorten
-alias t='tmux'
 alias ta='tmux attach'
-alias sp='. ~/.profile'
 alias get='curl -O'
+alias sp='. ~/.profile'
 alias rnb='toilet --gay -t -f'
 alias spr="curl -F 'sprunge=<-' http://sprunge.us"
 
@@ -17,14 +16,15 @@ alias top='htop'
 
 # cp
 alias cp='cp -arv'
+
 # mv
 alias mv='mv -v'
+
 # ls
 alias ls='ls -F --color=auto --group-directories-first'
 alias ll='ls -lhoGg'
 alias la='ls -a'
-# rm
-alias rdf='rm -rf'
+
 # mkdir
 alias mkdir='mkdir -p'
 
