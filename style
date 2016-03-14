@@ -2,6 +2,6 @@
 # shell style
 
 export PS1="$(color 4 ⟩) "
-export PS2='> '
+export PS2='➘ '
 export PS3='\ '
 export PS4='| '
