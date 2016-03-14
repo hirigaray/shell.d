@@ -1,7 +1,7 @@
 # shell.d
 My shell configuration.
 
-It's shell agnostic(as long as the shell is bourne compatible, that is).
+It supports all bourne compatible shells.
 
 ### Instructions
 Install `profile` as ~/.profile, and edit it to suit your needs.
