@@ -11,15 +11,11 @@ export SDL_AUDIODRIVER="alsa"
 
 # language
 export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
+export LOCALE_ARCHIVE="/usr/lib/locale/locale-archive"
 
 # temporary folder and subfolders
 export TMPDIR="/tmp/$USER"
-SUBTMP="dtach fonts xdg build"
-
-for d in $SUBTMP; do
-	mkdir -pm700 $TMPDIR/$d
-done
+mkdir "$TMPDIR/build" # for packages
 
 # paths
 export LOCAL="$HOME/local"
@@ -28,6 +24,9 @@ export CABAL="$HOME/.cabal"
 export GOPATH="$LOCAL/go"
 export GOROOT="/usr/lib/go"
 export LD_LIBRARY_PATH="/usr/local/lib"
+
+# go
+export GO15VENDOREXPERIMENT=1
 
 export XDG_CONFIG_HOME="$HOME/local/cfg"
 export XDG_RUNTIME_DIR="$TMPDIR/xdg"

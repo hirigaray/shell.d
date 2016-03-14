@@ -16,11 +16,12 @@ lightcolor() {
 
 # take a desktop screenshot
 dscrot() {
-	scrot "$TMPDIR/tmp.png"
+	maim "$TMPDIR/tmp.png"
 	optipng -o7 "$TMPDIR/tmp.png"
+
 	MD5=$(md5sum "$TMPDIR/tmp.png" | awk '{print $1}')
-	mv "$TMPDIR/tmp.png" "$HOME/media/img/Screenshots/$MD5.png"
-	echo "$HOME/media/img/Screenshots/$MD5.png"
+
+	/bin/mv "$TMPDIR/tmp.png" "$HOME/media/img/Screenshots/$MD5.png"
 }
 
 # start things in new X server
@@ -46,14 +47,11 @@ dt() {
 extract() {
 	if [ -f "$1" ] ; then
 		case "$1" in
-			*.tar.bz2 | *.tbz2 | *.tar.gz | *.tgz | *.tar.xz | *.txz | *.zip | *.maff | *.7z) bsdtar -xf "$1" ;;
-			*.bz2) bunzip2 "$1" ;;
-			*.gz) gunzip "$1" ;;
-			*.rar) unrar x "$1" ;;
-			*.tar) tar xvf "$1" ;;
-			*.xz) xz -d "$1" ;;
-			*.Z) uncompress "$1" ;;
-			*) echo "Unable to extract $1." ;;
+		*.rar) unrar x "$1" ;;
+		*.tar) tar xvf "$1" ;;
+		*.xz) xz -d "$1" ;;
+		*.Z) uncompress "$1" ;;
+		*) bsdtar -xf "$1" || echo "Unable to extract $1." ;;
 		esac
 	else
 		echo "Usage: extract $1"
