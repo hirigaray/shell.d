@@ -7,12 +7,17 @@ alias get='curl -O'
 alias sp='. ~/.profile'
 alias rnb='toilet --gay -t -f'
 alias spr="curl -F 'sprunge=<-' http://sprunge.us"
+alias ix="curl -F 'f:1=<-' ix.io"
 
 # replace
 alias vi='nvim'
 alias cc='clang'
 alias df='dfc'
 alias top='htop'
+
+# rlwrap
+alias guile="rlwrap guile"
+alias clojure="rlwrap clojure"
 
 # cp
 alias cp='cp -arv'

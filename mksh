@@ -1,4 +1,0 @@
-#!/bin/sh
-# mksh options
-bind =clear-screen
-bind -m =fg^J
