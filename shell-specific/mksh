@@ -1,7 +1,5 @@
 #!/bin/sh
 # mksh options
 
-if [ -n $(echo $SHELL | grep "mksh") ]; then
-	bind =clear-screen
-	bind -m =fg^J
-fi
+bind =clear-screen
+bind -m =fg^J
