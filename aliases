@@ -9,6 +9,7 @@ alias rnb='toilet --gay -t -f'
 alias spr="curl -F 'sprunge=<-' http://sprunge.us"
 alias ix="curl -F 'f:1=<-' ix.io"
 
+
 # replace
 alias vi='nvim'
 alias cc='clang'
@@ -16,8 +17,9 @@ alias df='dfc'
 alias top='htop'
 
 # rlwrap
-alias guile="rlwrap guile"
-alias clojure="rlwrap clojure"
+for prog in lein racket; do
+	alias $prog="rlwrap $prog"
+done
 
 # cp
 alias cp='cp -arv'

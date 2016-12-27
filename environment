@@ -2,7 +2,7 @@
 # environment variables
 
 # programs
-export BROWSER="firefox"
+export BROWSER="chromium"
 export EDITOR="nvim"
 export PAGER="less"
 export SXHKD_SHELL="/bin/sh"
@@ -19,8 +19,13 @@ export LOCAL="$HOME/local"
 export PLAN9="/usr/lib/plan9"
 export LD_LIBRARY_PATH="/usr/local/lib"
 
+# go
+export GOPATH="$LOCAL/go"
+export GOROOT="/usr/lib/go"
+export GO15VENDOREXPERIMENT=1
+
 # binaries
-export PATH="$LOCAL/bin:$LOCAL/wm:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/opt/sbin:/usr/bin/core_perl:/usr/bin/vendor_perl"
+export PATH="$LOCAL/bin:$LOCAL/wm/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/opt/sbin:/usr/bin/core_perl:/usr/bin/vendor_perl:$GOPATH/bin"
 
 # xdg
 export XDG_CONFIG_HOME="$LOCAL/cfg"
