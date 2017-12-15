@@ -2,11 +2,12 @@
 # environment variables
 
 # programs
-export BROWSER="chromium"
+export BROWSER="firefox"
 export EDITOR="nvim"
 export PAGER="less"
 export SXHKD_SHELL="/bin/sh"
 export SDL_AUDIODRIVER="alsa"
+export MPD_HOST="192.168.1.100"
 
 # language
 export LANG="en_US.UTF-8"
@@ -25,7 +26,7 @@ export GOROOT="/usr/lib/go"
 export GO15VENDOREXPERIMENT=1
 
 # binaries
-export PATH="$LOCAL/bin:$LOCAL/wm/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/opt/sbin:/usr/bin/core_perl:/usr/bin/vendor_perl:$GOPATH/bin"
+export PATH="$LOCAL/bin:$LOCAL/wm/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/bin:/opt/sbin:/usr/bin/core_perl:/usr/bin/vendor_perl:$GOPATH/bin:$HOME/.cargo/bin"
 
 # xdg
 export XDG_CONFIG_HOME="$LOCAL/cfg"

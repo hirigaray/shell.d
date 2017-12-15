@@ -17,7 +17,7 @@ alias df='dfc'
 alias top='htop'
 
 # rlwrap
-for prog in lein racket; do
+for prog in lein; do
 	alias $prog="rlwrap $prog"
 done
 
